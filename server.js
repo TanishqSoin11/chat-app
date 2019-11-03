@@ -1,4 +1,8 @@
-const io = require('socket.io')(3000);
+const server = express()
+server.use((req, res) => res.sendFile(INDEX) )
+server.listen(PORT, () => console.log(`Listening on ${ PORT }`));
+
+const io = require('socket.io')(server);
 
 const users = {};
 
